@@ -1,14 +1,40 @@
-
+<script type="text/javascript">
+    //fetch("http://localhost:3000/api/dogs")
+    //.then(res => res.json())
+    //.then(dogs => {
+     //   console.log(dogs)
+     //   return dogs;
+    //})
+            let dogs = [
+                {
+                    "id": 1,
+                    "name": "Bixby",
+                    "profilePicture": "images/bixby.jpg",
+                    "bio": "Single and ready to mingle!"
+                },
+                {
+                    "id": 2,
+                    "name": "Mesa",
+                    "profilePicture": "images/mesa.jpg",
+                    "bio": "Want to play catch?"
+                },
+                {
+                    "id": 3,
+                    "name": "Iago",
+                    "profilePicture": "images/iago.jpg",
+                    "bio": "Bad to the bone."
+                }
+            ]
+</script>
 
 <ul class="dogs">
-
-  <li>
-    <h3 class="name">name</h3>
-    <a href="dog/{{ id }}">name</a>
-    <img class="profile-picture "src="images/bixby.jpg" alt="{{ name }}">
+{{#each dogs}}
+  <li>Hello
+    {{!-- <h3 class="name"><a href="dogs/{{id}}">{{dogs.name}}</a></h3>
+    <img class="profile-picture "src="images/bixby.jpg" alt="{{name}}"> --}}
   </li>
-
-
+{{/each}}
 </ul>
 
 <a href="new-dog" class="add"></a>
+
