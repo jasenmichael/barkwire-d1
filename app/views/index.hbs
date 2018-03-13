@@ -1,40 +1,25 @@
 <script type="text/javascript">
-    //fetch("http://localhost:3000/api/dogs")
-    //.then(res => res.json())
-    //.then(dogs => {
-     //   console.log(dogs)
-     //   return dogs;
-    //})
-            let dogs = [
-                {
-                    "id": 1,
-                    "name": "Bixby",
-                    "profilePicture": "images/bixby.jpg",
-                    "bio": "Single and ready to mingle!"
-                },
-                {
-                    "id": 2,
-                    "name": "Mesa",
-                    "profilePicture": "images/mesa.jpg",
-                    "bio": "Want to play catch?"
-                },
-                {
-                    "id": 3,
-                    "name": "Iago",
-                    "profilePicture": "images/iago.jpg",
-                    "bio": "Bad to the bone."
-                }
-            ]
+  let dogs = []
+  dogsList = document.getElementsByClassName("dogs")
+  fetch("http://localhost:3000/api/dogs")
+    .then(res => res.json())
+    .then(res => {
+      addDogs(res.dogs)
+    }).then(dogs => addDogs(dogs))
+
+  function addDogs(dogs) {
+    dogs.forEach(addDog);
+  }
+
+  function addDog(dog) {
+    const $li = document.createElement("li");
+    $li.innerHTML = `
+            <h3 class="name"><a href="/dogs/${dog.id}">${dog.name}</a></h3>
+            <img class="profile-picture" src="/${dog.profilePicture}" alt="${dog.name}" />
+        `
+    document.querySelector(".dogs").appendChild($li);
+  }
 </script>
 
-<ul class="dogs">
-{{#each dogs}}
-  <li>Hello
-    {{!-- <h3 class="name"><a href="dogs/{{id}}">{{dogs.name}}</a></h3>
-    <img class="profile-picture "src="images/bixby.jpg" alt="{{name}}"> --}}
-  </li>
-{{/each}}
-</ul>
-
-<a href="new-dog" class="add"></a>
-
+<ul class="dogs"></ul>
+<a class="add" href="/dogs/new">Add a Dog</a>
