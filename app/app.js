@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 // View Routes
 app.get("/dogs", (request, response) => {
-    response.render("dogs");
+    response.render("index");
 });
 app.get("/dogs/new", (request, response) => {
     response.render("new-dog");
