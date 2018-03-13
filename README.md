@@ -1,3 +1,17 @@
+to install
+
+```
+git clone https://github.com/jasenmichael/barkwire-d1
+
+cd barkwire-d1
+
+npm install
+```
+
+
+
+
+
 ## Barkwire Pairs
 
 In this drill, you're going to pair up with a partner to knock out a story for BarkWire Pairs, a dating app for dogs.
