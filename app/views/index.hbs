@@ -8,16 +8,16 @@
     }).then(dogs => addDogs(dogs))
 
   function addDogs(dogs) {
-    dogs.forEach(addDog);
+    dogs.forEach(addDog)
   }
 
   function addDog(dog) {
-    const $li = document.createElement("li");
+    const $li = document.createElement("li")
     $li.innerHTML = `
             <h3 class="name"><a href="/dogs/${dog.id}">${dog.name}</a></h3>
             <img class="profile-picture" src="/${dog.profilePicture}" alt="${dog.name}" />
         `
-    document.querySelector(".dogs").appendChild($li);
+    document.querySelector(".dogs").appendChild($li)
   }
 </script>
 
